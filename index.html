@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smartcity 360 | Smart City Issue Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Smartcity 360 home">
+      <span class="brand-icon">🏙️</span>
+      <span><strong>Smartcity <em>360</em></strong><small>Safer · Cleaner · Smarter</small></span>
+    </a>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#report">Report Issue</a>
+      <a href="#complaints">Track Complaint</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="welcome" id="dashboard">
+      <div>
+        <p class="eyebrow">SMART SOLUTIONS, SMARTER SOCIETY</p>
+        <h1>A better city starts <span>with you.</span></h1>
+        <p>Report local problems, track progress, and help make your community cleaner and safer.</p>
+      </div>
+      <a class="primary-btn" href="#report">＋ Report an issue</a>
+    </section>
+
+    <section class="stats" aria-label="Complaint summary">
+      <article class="stat-card blue"><span class="stat-icon">🚦</span><p>Traffic & Roads</p><strong id="roadCount">0</strong><small>Reported issues</small></article>
+      <article class="stat-card green"><span class="stat-icon">🗑️</span><p>Waste Reports</p><strong id="wasteCount">0</strong><small>Reported issues</small></article>
+      <article class="stat-card cyan"><span class="stat-icon">💧</span><p>Water Problems</p><strong id="waterCount">0</strong><small>Reported issues</small></article>
+      <article class="stat-card orange"><span class="stat-icon">💡</span><p>Civic Issues</p><strong id="civicCount">0</strong><small>Reported issues</small></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel explainer">
+        <div class="panel-heading"><div><p class="eyebrow">HOW IT WORKS</p><h2>Small reports. Real change.</h2></div><span class="heading-icon">🌱</span></div>
+        <div class="steps">
+          <div class="step"><span>1</span><div><strong>Report</strong><p>Choose a problem and enter its location.</p></div></div>
+          <div class="step"><span>2</span><div><strong>Track</strong><p>Find your complaint using its unique ID.</p></div></div>
+          <div class="step"><span>3</span><div><strong>Resolve</strong><p>Follow the status until the issue is fixed.</p></div></div>
+        </div>
+        <div class="community-note"><span>💚</span><p><strong>Built for every community</strong><br/>A simple, low-cost concept that can work in towns and rural areas too.</p></div>
+      </article>
+
+      <article class="panel" id="report">
+        <div class="panel-heading"><div><p class="eyebrow">CITIZEN SERVICES</p><h2>Report an issue</h2></div><span class="heading-icon">📝</span></div>
+        <form id="issueForm">
+          <label for="category">Issue category</label>
+          <select id="category" required>
+            <option value="">Choose a category</option>
+            <option value="Traffic & Roads">Traffic & Roads / Pothole</option>
+            <option value="Waste">Waste / Garbage</option>
+            <option value="Water">Water leakage</option>
+            <option value="Civic">Streetlight / Other civic issue</option>
+          </select>
+          <label for="location">Location / nearby landmark</label>
+          <input id="location" placeholder="e.g. Main Road, near school" required maxlength="100" />
+          <label for="description">Describe the problem</label>
+          <textarea id="description" rows="3" placeholder="Explain what needs attention..." required maxlength="300"></textarea>
+          <button class="primary-btn full" type="submit">Submit report</button>
+          <p class="form-hint">Demo project: reports are saved in this browser only.</p>
+          <div id="submitMessage" class="message" role="status" aria-live="polite"></div>
+        </form>
+      </article>
+    </section>
+
+    <section class="panel complaints-panel" id="complaints">
+      <div class="panel-heading responsive-heading">
+        <div><p class="eyebrow">LIVE DEMO DATA</p><h2>Recent complaints</h2><p class="muted">Use the search box to find a complaint by ID, category, or location.</p></div>
+        <input id="searchInput" class="search" placeholder="Search complaints..." aria-label="Search complaints" />
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Complaint ID</th><th>Category</th><th>Location</th><th>Description</th><th>Status</th><th>Demo admin</th></tr></thead>
+          <tbody id="complaintRows"></tbody>
+        </table>
+      </div>
+      <p id="emptyState" class="empty-state" hidden>No complaints found. Try another search or report an issue above.</p>
+    </section>
+
+    <section class="presentation-tip">
+      <span>🎤</span><div><strong>Presentation tip</strong><p>Explain the problem, demonstrate submitting a complaint, show its unique ID, then use the demo admin menu to change its status.</p></div>
+    </section>
+  </main>
+
+  <footer>Smartcity 360 · Student prototype for affordable civic problem reporting · <span id="year"></span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
